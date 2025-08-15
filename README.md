@@ -1,4 +1,4 @@
 # Setup-SCSS
 Setup padrão para criado com scss para aumentar a produtividade no desenvolvimento front end.
 
-Versão 1.0
+Versão 1.0 - 15/08/2025
