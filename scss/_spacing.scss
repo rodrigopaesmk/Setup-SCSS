@@ -1,0 +1,111 @@
+// ----------------------------------------------------------------
+// RESPONSIVE SPACING UTILITIES
+// Gera classes utilitárias de margin e padding com breakpoints
+// Ex: .mt-2, .p-3-md, .px-4-lg
+// ----------------------------------------------------------------
+
+// --------------------------------------------------
+// SPACING SCALE (em pixels)
+// --------------------------------------------------
+$gap-map: (
+  0: 0px,
+  1: 8px,
+  2: 16px,
+  3: 24px,
+  4: 32px,
+  5: 48px,
+  6: 64px,
+  7: 72px,
+  8: 96px,
+  9: 128px
+);
+
+// --------------------------------------------------
+// BREAKPOINTS (Mobile First)
+// --------------------------------------------------
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1240px,
+  xxl: 1400px
+);
+
+// --------------------------------------------------
+// SPACING CLASSES
+// Gera classes padrão e por breakpoint
+// --------------------------------------------------
+
+@each $key, $value in $gap-map {
+
+  // ---- MOBILE FIRST (sem breakpoint)
+  .m-#{$key}   { margin: $value; }
+  .mt-#{$key}  { margin-top: $value; }
+  .mb-#{$key}  { margin-bottom: $value; }
+  .ml-#{$key}  { margin-left: $value; }
+  .mr-#{$key}  { margin-right: $value; }
+  .mx-#{$key}  {
+    margin-left: $value;
+    margin-right: $value;
+  }
+  .my-#{$key}  {
+    margin-top: $value;
+    margin-bottom: $value;
+  }
+
+  .p-#{$key}   { padding: $value; }
+  .pt-#{$key}  { padding-top: $value; }
+  .pb-#{$key}  { padding-bottom: $value; }
+  .pl-#{$key}  { padding-left: $value; }
+  .pr-#{$key}  { padding-right: $value; }
+  .px-#{$key}  {
+    padding-left: $value;
+    padding-right: $value;
+  }
+  .py-#{$key}  {
+    padding-top: $value;
+    padding-bottom: $value;
+  }
+
+  // ---- CLASSES COM BREAKPOINTS
+  @each $break, $breakpoint in $breakpoints {
+    @media (min-width: $breakpoint) {
+      .m-#{$key}-#{$break}   { margin: $value; }
+      .mt-#{$key}-#{$break}  { margin-top: $value; }
+      .mb-#{$key}-#{$break}  { margin-bottom: $value; }
+      .ml-#{$key}-#{$break}  { margin-left: $value; }
+      .mr-#{$key}-#{$break}  { margin-right: $value; }
+      .mx-#{$key}-#{$break}  {
+        margin-left: $value;
+        margin-right: $value;
+      }
+      .my-#{$key}-#{$break}  {
+        margin-top: $value;
+        margin-bottom: $value;
+      }
+
+      .p-#{$key}-#{$break}   { padding: $value; }
+      .pt-#{$key}-#{$break}  { padding-top: $value; }
+      .pb-#{$key}-#{$break}  { padding-bottom: $value; }
+      .pl-#{$key}-#{$break}  { padding-left: $value; }
+      .pr-#{$key}-#{$break}  { padding-right: $value; }
+      .px-#{$key}-#{$break}  {
+        padding-left: $value;
+        padding-right: $value;
+      }
+      .py-#{$key}-#{$break}  {
+        padding-top: $value;
+        padding-bottom: $value;
+      }
+    }
+  }
+}
+
+.pd-y{
+  padding: 48px 0px;
+
+  @include responsive(md){
+    padding: 80px 0px;         
+  }
+
+}

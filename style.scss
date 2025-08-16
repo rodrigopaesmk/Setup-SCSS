@@ -1,0 +1,29 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+@import 'scss/colors';
+@import 'scss/typography';
+@import 'scss/layout';
+@import 'scss/spacing';
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  width: 100%;
+  background-color: $white;
+}
+
+img{
+  width: 100%;
+  height: auto;
+}
+
+@import 'scss/home';
+@import 'scss/menu-mobile';
+@import 'scss/swiper';

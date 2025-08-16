@@ -1,0 +1,102 @@
+// Typography of project
+@import 'layout';
+@import 'colors';
+
+// --------------------------------------------------
+// FONT IMPORT
+// --------------------------------------------------
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400..700&display=swap');
+
+// --------------------------------------------------
+// FONT VARIABLES
+// --------------------------------------------------
+$font-title: "Lora", serif;
+$font-text: 'Inter', sans-serif;
+
+// --------------------------------------------------
+// BREAKPOINTS (Mobile First)
+// --------------------------------------------------
+@mixin respond-up($breakpoint) {
+  @if $breakpoint == md {
+    @media (min-width: $breakpoint-md) { @content; }
+  } @else if $breakpoint == lg {
+    @media (min-width: $breakpoint-lg) { @content; }
+  }
+}
+
+// --------------------------------------------------
+// TYPEFACE MAPS
+// --------------------------------------------------
+
+// Títulos com Inter
+$typeface-titles: (
+  h1: (sm: 36px, md: 48px, lg: 64px, lh: 110%, fw: 700, color: $secondary),
+  h2: (sm: 28px, md: 36px, lg: 48px, lh: 110%, fw: 600, color: $secondary),
+  h3: (sm: 20px, md: 24px, lg: 24px, lh: 120%, fw: 500),
+  h4: (sm: 18px, md: 22px, lg: 20px, lh: 120%, fw: 500)
+);
+
+// Parágrafos com Inter
+$typeface-text: (
+  p1: (sm: 16px, md: 18px, lg: 20px, lh: 150%, fw: 400, color: $gray-dark),
+  p2: (sm: 16px, md: 18px, lg: 18px, lh: 150%, fw: 400, color: $gray-dark),
+  p3: (sm: 16px, md: 16px, lg: 16px, lh: 160%, fw: 400, color: $gray-dark)
+);
+
+// --------------------------------------------------
+// TYPEFACE MIXIN
+// --------------------------------------------------
+@mixin typeface($map, $key, $font-family) {
+  $data: map-get($map, $key);
+  font-family: $font-family;
+  font-size: map-get($data, sm);
+  line-height: map-get($data, lh);
+  font-weight: map-get($data, fw);
+
+  @if map-has-key($data, color) {
+    color: map-get($data, color);
+  }
+
+  @include respond-up(md) {
+    font-size: map-get($data, md);
+  }
+
+  @include respond-up(lg) {
+    font-size: map-get($data, lg);
+  }
+}
+
+// --------------------------------------------------
+// TYPOGRAPHY ELEMENTS
+// --------------------------------------------------
+
+// TÍTULOS
+h1 { @include typeface($typeface-titles, h1, $font-title); }
+h2 { @include typeface($typeface-titles, h2, $font-title); }
+h3 { @include typeface($typeface-titles, h3, $font-title); }
+h4 { @include typeface($typeface-titles, h4, $font-title); }
+
+// PARÁGRAFOS
+p   { @include typeface($typeface-text, p3, $font-text); }
+.p1 { @include typeface($typeface-text, p1, $font-text); }
+.p2 { @include typeface($typeface-text, p2, $font-text); }
+.p3 { @include typeface($typeface-text, p3, $font-text); }
+
+
+.bold {
+  font-weight: bold;
+  //color: $black-light;
+}
+
+span{
+  display: inline-block;
+}
+
+.text-center {
+  text-align: center;
+}
+
+
+
+

@@ -1,0 +1,33 @@
+// --------------------------------------------------
+// COLOR PALETTE
+// --------------------------------------------------
+
+// Neutros
+$black:        #000;
+$white:        #fff;
+$gray-dark:    #5b5b5b;
+$gray-normal:  #D3D3D3;
+$gray-light:   #F3F3F3;
+
+// Cores principais
+$primary:      #F45905;
+$primary-light:#FFF8F1;
+$secondary:    #183C03;
+
+// Cores complementares
+$success:      #2ecc71;
+$danger:       #e74c3c;
+$warning:      #f1c40f;
+$info:         #3498db;
+
+// Utilitárias
+$bg-light:     $primary-light;
+$bg-dark:      $secondary;
+
+.color-primary{
+   color: $primary;
+}
+
+.bg-light{
+   background: $primary-light;
+}
