@@ -29,12 +29,12 @@ $font-text: 'Inter', sans-serif;
 // TYPEFACE MAPS
 // --------------------------------------------------
 
-// Títulos com Inter
+// Títulos com Lora
 $typeface-titles: (
   h1: (sm: 36px, md: 48px, lg: 64px, lh: 110%, fw: 700, color: $secondary),
   h2: (sm: 28px, md: 36px, lg: 48px, lh: 110%, fw: 600, color: $secondary),
-  h3: (sm: 20px, md: 24px, lg: 24px, lh: 120%, fw: 500),
-  h4: (sm: 18px, md: 22px, lg: 20px, lh: 120%, fw: 500)
+  h3: (sm: 20px, md: 24px, lg: 24px, lh: 120%, fw: 500, color: $secondary),
+  h4: (sm: 18px, md: 22px, lg: 20px, lh: 120%, fw: 500, color: $secondary)
 );
 
 // Parágrafos com Inter
