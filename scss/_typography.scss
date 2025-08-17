@@ -22,6 +22,8 @@ $font-text: 'Inter', sans-serif;
     @media (min-width: $breakpoint-md) { @content; }
   } @else if $breakpoint == lg {
     @media (min-width: $breakpoint-lg) { @content; }
+  } @else if $breakpoint == xxl {
+    @media (min-width: $breakpoint-xxl) { @content; }
   }
 }
 
@@ -31,17 +33,17 @@ $font-text: 'Inter', sans-serif;
 
 // Títulos com Lora
 $typeface-titles: (
-  h1: (sm: 36px, md: 48px, lg: 64px, lh: 110%, fw: 700, color: $secondary),
-  h2: (sm: 28px, md: 36px, lg: 48px, lh: 110%, fw: 600, color: $secondary),
-  h3: (sm: 20px, md: 24px, lg: 24px, lh: 120%, fw: 500, color: $secondary),
-  h4: (sm: 18px, md: 22px, lg: 20px, lh: 120%, fw: 500, color: $secondary)
+  h1: (sm: 36px, md: 48px, lg: 64px, xxl: 64px, lh: 110%, fw: 700, color: $secondary),
+  h2: (sm: 28px, md: 36px, lg: 48px, xxl: 48px, lh: 110%, fw: 600, color: $secondary),
+  h3: (sm: 20px, md: 24px, lg: 24px, xxl: 24px, lh: 120%, fw: 500, color: $secondary),
+  h4: (sm: 18px, md: 22px, lg: 20px, xxl: 20px, lh: 120%, fw: 500, color: $secondary)
 );
 
 // Parágrafos com Inter
 $typeface-text: (
-  p1: (sm: 16px, md: 18px, lg: 20px, lh: 150%, fw: 400, color: $gray-dark),
-  p2: (sm: 16px, md: 18px, lg: 18px, lh: 150%, fw: 400, color: $gray-dark),
-  p3: (sm: 16px, md: 16px, lg: 16px, lh: 160%, fw: 400, color: $gray-dark)
+  p1: (sm: 16px, md: 18px, lg: 20px, xxl: 20px, lh: 150%, fw: 400, color: $gray-dark),
+  p2: (sm: 16px, md: 18px, lg: 18px, xxl: 18px, lh: 150%, fw: 400, color: $gray-dark),
+  p3: (sm: 16px, md: 16px, lg: 16px, xxl: 16px, lh: 160%, fw: 400, color: $gray-dark)
 );
 
 // --------------------------------------------------
@@ -83,15 +85,6 @@ p   { @include typeface($typeface-text, p3, $font-text); }
 .p2 { @include typeface($typeface-text, p2, $font-text); }
 .p3 { @include typeface($typeface-text, p3, $font-text); }
 
-
-.bold {
-  font-weight: bold;
-  //color: $black-light;
-}
-
-span{
-  display: inline-block;
-}
 
 .text-center {
   text-align: center;
